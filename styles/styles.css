@@ -1,0 +1,294 @@
+html {
+    font-size: 62.5%
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+img {
+    height: 100%;
+    display: block;
+}
+
+.randomize {
+    position: absolute;
+    z-index: 150;
+    top: 0;
+    right: 0;
+}
+
+/* curtain */
+.curtain {
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, rgba(3, 3, 3, 0.77), rgba(52, 52, 52, 0)),url(./assets/bg-curtain.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.curtain__wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.curtain__wrapper input[type=checkbox] {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    opacity: 0;
+    top: 0;
+    left: 0;
+}
+
+.curtain__wrapper input[type=checkbox]:checked ~ div.curtain__panel--left,
+.curtain__wrapper input[type=checkbox]:checked ~ div.curtain__panel--right {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+input[type=checkbox]:checked ~ .microphone {
+    bottom: 0;
+}
+
+input[type=checkbox]:checked ~ .curtain__header {
+    top: 100px;
+}
+
+input[type=checkbox]:checked ~ .curtain__content .songTitle,
+input[type=checkbox]:checked ~ .curtain__content .artist,
+input[type=checkbox]:checked ~ .curtain__content .resultsWrapper {
+    opacity: 0;
+}
+
+
+.curtain__panel {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(3, 3, 3, 0.77), rgba(52, 52, 52, 0)),url(./assets/bg-curtain.jpg);
+    color: #fff;
+    float: left;
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    transition: all 1s ease-out;
+    z-index: 2;
+}
+
+.curtain__panel--left {
+    justify-content: flex-start;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.curtain__panel--right {
+    justify-content: flex-end;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
+.curtain__header {
+    position: absolute;
+    z-index: 3;
+    background-color: #191919;
+    border-radius: 24px;
+    box-shadow: 2px 1px 7px 0 #ffd400;
+    border: solid 6px #ffd400;
+    top: -350px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 1s;
+}
+
+.curtain__header--content {
+    position: relative;
+}
+
+.note {
+    position: absolute;
+    height: auto;
+}
+
+.blue {
+    width: 66px;
+    top: 5px;
+    left: 0;
+}
+
+.green {
+    width: 65px;
+    bottom: 0;
+    right: 8px;
+}
+.pink {
+    width: 20px;
+    top: 12px;
+    right: 30px;
+}
+
+.orange {
+    width: 27px;
+    bottom: 12px;
+    left: 20px;
+}
+
+
+.curtain__header h1 {
+    text-shadow: 0 -1px 4px #fed518, 0 2px 4px rgba(0, 0, 0, 0.75);
+    font-family: Barlow;
+    font-size: 48px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #fff2b6;
+    margin: 0;
+    padding: 38px 50px;
+}
+
+.microphone {
+    position: absolute;
+    z-index: 3;
+    height: 55vh;
+    bottom: -36vh;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 1s;
+}
+
+.microphone h2 {
+    position: absolute;
+    bottom: 14vh;
+    left: 50%;
+    transform: translateX(-53%);
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.5);
+    border: 5px solid #ececec;
+    background: black;
+    text-shadow: 1px 1px 1px rgba(66, 49, 49, 0.5);
+    font-family: Barlow;
+    font-size: 20px;
+    border-radius: 35px;
+    font-weight: 800;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.03px;
+    text-align: center;
+    padding: 15px 20px 15px 23px;
+    color: #ffe500;
+}
+
+.curtain__content {
+    color: #fff;
+    padding: 1rem 0;
+    position: absolute;
+    text-align: center;
+    padding-top: 70px;
+    z-index: 1;
+    width: 100%;
+}
+
+
+.curtain__content .songTitle {
+    background-color: #191919;
+    border-radius: 24px;
+    box-shadow: 2px 1px 7px 0 #ffd400;
+    border: solid 6px #ffd400;
+    display: inline-block;
+    text-shadow: 0 -1px 4px #fed518, 0 2px 4px rgba(0, 0, 0, 0.75);
+    font-family: Barlow;
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #fff2b6;
+    margin: 0;
+    padding: 20px 40px;
+    opacity: 1;
+    transition: 1s;
+}
+
+.curtain__content .artist {
+    text-shadow: 0 -1px 4px #fed518, 0 2px 4px rgba(0, 0, 0, 0.75);
+    font-family: Barlow;
+    font-size: 23px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #f1d868;
+    margin-bottom: 0;
+    opacity: 1;
+    transition: 1s;
+}
+
+
+.resultsWrapper {
+    height: 350px;
+    overflow-y: scroll;
+    position: relative;
+    font-family: Barlow;
+    font-size: 35px;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1.43;
+    letter-spacing: 1.44px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 20px;
+    border-radius: 24px;
+    box-shadow: 2px 1px 7px 0 #ffd400;
+    border: solid 2px #ffd400;
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    padding: 20px;
+    opacity: 1;
+    transition: 1s;
+}
+
+
+
+/* p tag with lyrics */
+.lyrics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 620px) {
+    .curtain__wrapper input[type=checkbox]:checked ~ div.curtain__panel--left,
+    .curtain__wrapper input[type=checkbox]:checked ~ div.curtain__panel--right{
+        opacity: 1;
+    }
+
+    .curtain__panel--right,
+    .curtain__panel--left {
+        opacity: 0;
+    }
+}
+
+@media (max-height: 700px) {
+    .microphone {
+        bottom: -60vh;
+        height: 45vh;
+    }
+
+    .microphone h2 {
+        bottom: 30px;
+    }
+}

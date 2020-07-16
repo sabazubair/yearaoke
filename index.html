@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- load in google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow:300,800i&display=swap" rel="stylesheet">
+    <!-- load in setup -->
+    <link rel="stylesheet" href="styles/setup.css">
+    <!-- load in styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Year-a-oke</title>
+</head>
+<body>
+    <div class="curtain">
+        <div class="curtain__wrapper">
+            <input class="curtain__checkbox" type="checkbox" checked>
+            <div class="curtain__panel curtain__panel--left">
+                <img src="./styles/assets/left-curtain.png" alt="">
+            </div>
+
+            <div class="curtain__header">
+                <div class="curtain__header--content">
+                    <img class="note blue" src="./styles/assets/blue.png" alt="">
+                    <img class="note orange" src="./styles/assets/orange.png" alt="">
+                    <img class="note pink" src="./styles/assets/pink.png" alt="">
+                    <img class="note green" src="./styles/assets/green.png" alt="">
+                    <h1>Year-A-Oke</h1>
+                </div>
+            </div>
+
+            <div class="microphone">
+                <img src="./styles/assets/microphone.png" alt="">
+                <h2>Let's play</h2>
+            </div>
+
+            <div class="curtain__content">
+                <h2 class="songTitle"></h2>
+                <h3 class="artist"></h3>
+                <div class="resultsWrapper">
+                    <p class="lyrics"></p>
+                </div>
+            </div>
+            <div class="curtain__panel curtain__panel--right">
+                <img src="./styles/assets/right-curtain.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
